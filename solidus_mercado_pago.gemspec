@@ -1,5 +1,6 @@
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# frozen_string_literal: true
+
+$:.push File.expand_path('lib', __dir__)
 require 'solidus_mercado_pago/version'
 
 Gem::Specification.new do |s|
@@ -15,12 +16,17 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.add_dependency 'rest-client', '~> 2.0'
-  s.add_dependency 'solidus_core', '~> 2.4'
-  s.add_dependency 'solidus_support', '~> 0'
-
+  s.add_dependency 'solidus', ['>= 2.0', '< 3']
+  s.add_dependency 'solidus_auth_devise', ['>= 2.0', '< 3']
+  s.add_dependency 'solidus_support'
+  s.add_dependency 'deface', '~> 1.0'
   s.add_dependency 'canonical-rails', '~> 0.2.0'
   s.add_dependency 'jquery-rails',    '~> 4.1'
 
-  s.add_development_dependency 'capybara-accessible', '~> 0'
-  s.add_development_dependency 'generator_spec', '~> 0'
+  s.add_development_dependency 'coffee-rails'
+  s.add_development_dependency 'capybara-accessible'
+  s.add_development_dependency 'generator_spec'
+  s.add_development_dependency 'poltergeist'
+  s.add_development_dependency 'solidus_dev_support'
+  s.add_development_dependency 'webmock'
 end
