@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'json'
 
-RSpec.describe MercadoPago::Client, type: :model do
+describe MercadoPago::Client, type: :model do
   SPEC_ROOT = File.expand_path('../', File.dirname(__FILE__))
 
   let(:payment_method) { double('payment_method', preferred_client_id: 1, preferred_client_secret: 1) }

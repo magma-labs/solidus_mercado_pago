@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-RSpec.describe Spree::MercadoPagoController, type: :controller do
+describe Spree::MercadoPagoController, type: :controller do
   describe '#ipn' do
     let(:operation_id) { 'op123' }
 
@@ -12,7 +14,7 @@ RSpec.describe Spree::MercadoPagoController, type: :controller do
         expect(use_case).to receive(:process!)
 
         post :ipn, params: { id: operation_id, topic: 'payment', format: :json }
-        expect(response).to be_success
+        expect(response).to be_ok
 
         notification = MercadoPago::Notification.order(:created_at).last
         expect(notification.topic).to eq('payment')

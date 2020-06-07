@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Spree
   class MercadoPagoController < StoreController
     protect_from_forgery except: :ipn

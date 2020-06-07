@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSolidusMercadoPagoNotifications < ActiveRecord::Migration[4.2]
   def change
     create_table :mercado_pago_notifications do |t|

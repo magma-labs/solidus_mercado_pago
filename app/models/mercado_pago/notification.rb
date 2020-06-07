@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MercadoPago
   class Notification < ActiveRecord::Base
     self.table_name = 'mercado_pago_notifications'

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-RSpec.describe Spree::PaymentMethod::MercadoPago do
+describe Spree::PaymentMethod::MercadoPago do
   describe 'Methods' do
     subject(:payment_method) { described_class.new }
 

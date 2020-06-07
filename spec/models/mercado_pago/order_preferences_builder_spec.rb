@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'OrderPreferencesBuilder' do
@@ -51,7 +53,7 @@ describe 'OrderPreferencesBuilder' do
       end
 
       it 'onlies have line items and adjustments in items' do
-        expect(subject[:items]).to have(order.line_items.count + order.adjustments.count).items
+        expect(subject[:items].count).to eq(order.line_items.count + order.adjustments.count)
       end
     end
   end

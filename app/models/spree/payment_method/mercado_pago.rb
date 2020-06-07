@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module Spree
   class PaymentMethod::MercadoPago < PaymentMethod
-
     preference :sandbox, :boolean, default: true
     preference :client_id, :string, default: ENV['MERCADOPAGO_CLIENT_ID']
     preference :client_secret, :string, default: ENV['MERCADOPAGO_CLIENT_SECRET']

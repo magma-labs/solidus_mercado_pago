@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rest_client'
 require 'mercado_pago/client/authentication'
 require 'mercado_pago/client/preferences'
@@ -9,7 +11,7 @@ module MercadoPago
     # ProductsHelper
     include Authentication
     include Preferences
-    include API
+    include Api
 
     attr_reader :errors
     attr_reader :auth_response
